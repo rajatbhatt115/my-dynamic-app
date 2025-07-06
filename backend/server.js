@@ -44,7 +44,7 @@ app.use("/api/banner", bannerRoutes);
 app.use("/api/about", aboutRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/faqs", faqRoutes);
-app.use("/api/AboutpageAbout", AboutpageAboutRoutes);
+app.use("/api/aboutpageabout", aboutpageAboutRoutes);   
 app.use("/api/aboutbanner", aboutbannerRoutes);
 app.use("/api/contactbanner", contactbannerRoutes);
 app.use("/api/contact", contactRoutes);
