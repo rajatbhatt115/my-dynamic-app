@@ -19,7 +19,7 @@ const TeamAdmin: React.FC = () => {
   }, []);
 
   const fetchTeam = async () => {
-    const res = await axios.get<TeamMember[]>('http://localhost:5000/api/team');
+    const res = await axios.get<TeamMember[]>('/team');
     setTeamData(res.data);
   };
 
@@ -30,9 +30,9 @@ const TeamAdmin: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (editId) {
-      await axios.put(`http://localhost:5000/api/team/${editId}`, teamForm);
+      await axios.put(`/team/${editId}`, teamForm);
     } else {
-      await axios.post('http://localhost:5000/api/team', teamForm);
+      await axios.post('/team', teamForm);
     }
     setTeamForm({ name: '', role: '', image: '' });
     setEditId(null);
@@ -40,7 +40,7 @@ const TeamAdmin: React.FC = () => {
   };
 
   const handleDelete = async (id: string) => {
-    await axios.delete(`http://localhost:5000/api/team/${id}`);
+    await axios.delete(`/team/${id}`);
     fetchTeam();
   };
 

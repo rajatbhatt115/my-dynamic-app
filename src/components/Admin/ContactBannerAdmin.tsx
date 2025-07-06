@@ -18,7 +18,7 @@ const ContactBannerAdmin: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get<BannerData>("http://localhost:5000/api/contactbanner")
+      .get<BannerData>("/contactbanner")
       .then((res) => {
         if (res.data) setBannerData(res.data);
         setLoading(false);
@@ -36,7 +36,7 @@ const ContactBannerAdmin: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await axios.put("http://localhost:5000/api/contactbanner", bannerData);
+      await axios.put("/contactbanner", bannerData);
       alert("Banner updated successfully!");
     } catch (err) {
       console.error("Update error:", err);
