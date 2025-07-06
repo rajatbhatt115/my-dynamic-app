@@ -20,8 +20,16 @@ const adminAuthRoutes = require("./routes/adminAuthRoutes");
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// ✅ UPDATED: Configure CORS to allow only your frontend domain
+const allowedOrigins = [
+  "https://frontend-staging-nl3f.onrender.com"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Connect to MongoDB
