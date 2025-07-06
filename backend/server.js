@@ -13,7 +13,7 @@ const bannerRoutes = require("./routes/bannerRoutes");
 const aboutRoutes = require("./routes/aboutRoutes");
 const teamRoutes = require("./routes/teamRoutes");
 const faqRoutes = require("./routes/faqRoutes");
-const aboutpageAboutRoutes = require("./routes/aboutpageAboutRoutes"); // 🛑 CASE SENSITIVE - ensure filename matches
+const AboutpageAboutRoutes = require("./routes/AboutpageAboutRoutes"); // 🛑 CASE SENSITIVE - ensure filename matches
 const aboutbannerRoutes = require("./routes/aboutbannerRoutes");
 const contactbannerRoutes = require("./routes/contactbannerRoutes");
 const contactRoutes = require("./routes/contactRoutes");
@@ -42,7 +42,7 @@ app.use("/api/banner", bannerRoutes);
 app.use("/api/about", aboutRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/faqs", faqRoutes);
-app.use("/api/aboutpageabout", aboutpageAboutRoutes); // ✅ This must match the exact file name
+app.use("/api/AboutpageAbout", AboutpageAboutRoutes); // ✅ This must match the exact file name
 app.use("/api/aboutbanner", aboutbannerRoutes);
 app.use("/api/contactbanner", contactbannerRoutes);
 app.use("/api/contact", contactRoutes);
