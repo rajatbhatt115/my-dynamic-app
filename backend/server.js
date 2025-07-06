@@ -1,5 +1,3 @@
-// server.js
-
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -22,9 +20,9 @@ const adminAuthRoutes = require("./routes/adminAuthRoutes");
 
 const app = express();
 
-// ✅ Configure CORS for Render frontend
+// ✅ Configure CORS for Render frontend (production)
 app.use(cors({
-  origin: process.env.CLIENT_ORIGIN || "https://frontend-staging-nl3f.onrender.com",
+  origin: process.env.CLIENT_ORIGIN || "https://my-dynamic-app.onrender.com",
   credentials: true
 }));
 
