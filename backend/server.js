@@ -43,12 +43,12 @@ app.use("/api/aboutbanner", aboutbannerRoutes);
 app.use("/api/contactbanner", contactbannerRoutes);
 app.use("/api/contact", contactRoutes);
 
-// ✅ Serve frontend build (from root-level build/)
-app.use(express.static(path.join(__dirname, "../build")));
+// // ✅ Serve frontend build (from root-level build/)
+// app.use(express.static(path.join(__dirname, "../build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../build", "index.html"));
+// });
 
 app.get("/api", (req, res) => {
   res.send("✅ API is running successfully on Render!");
