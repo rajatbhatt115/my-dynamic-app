@@ -16,13 +16,14 @@ const contactbannerRoutes = require("./routes/contactbannerRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const adminAuthRoutes = require("./routes/adminAuthRoutes");
 
+// Create Express app
 const app = express();
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
-// DB Connection
+// Connect to MongoDB
 connectDB();
 
 // Routes
@@ -41,9 +42,8 @@ app.get("/", (req, res) => {
   res.send("✅ API is running successfully on Render!");
 });
 
-// Start the server on the correct port
+// Start server with Render-compatible port binding
 const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on http://0.0.0.0:${PORT}`);
 });
-
